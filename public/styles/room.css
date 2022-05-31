@@ -5,19 +5,19 @@ body{
 .own-video{
     width: 490px;
     height: 300px;
-    margin: 20px;
+    margin: 10px;
 
 }
 video {
     object-fit: cover;
     width: 490px;
     height: 300px;
-    margin: 20px;
+    margin: 10px;
 }
 .user-video{
     width: 490px;
     height: 300px;
-    margin: 20px;
+    margin: 10px;
 }  
 .main{
 height:100vh;
