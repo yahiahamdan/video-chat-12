@@ -1,0 +1,169 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.own-video{
+    width: 490px;
+    height: 300px;
+    margin: 20px;
+
+}
+video {
+    object-fit: cover;
+    width: 490px;
+    height: 300px;
+    margin: 20px;
+}
+.user-video{
+    width: 490px;
+    height: 300px;
+    margin: 20px;
+}  
+.main{
+height:100vh;
+display: flex;    
+}
+.main-left{
+    flex:0.7;
+    display: flex;
+    flex-direction: column;
+}
+.main-videos{
+    display: flex;
+    flex-grow: 1;
+    background-color:rgb(6, 6, 34);
+    
+}
+#video-grid{
+  display: flex;
+  flex-wrap: wrap;
+}
+.videos{
+border: 2px black;
+width: 350px;
+height: 250px;
+
+
+}
+.main-controls{
+    display: flex;
+    justify-content: space-between;
+}
+.main-right{
+    flex: 0.3;
+}           
+.main-controls{
+display: flex;
+background-color:black;
+color: #efefef;
+padding: 3px;
+}   
+.main-controls-block{
+display: flex;
+}
+.main-controls-button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  cursor: pointer;
+}   
+ .main-controls-button i{
+     font-size: 15px;
+ }    
+ .leave-meeting{
+     color: #EB534B;
+ }  
+ .main-controls-button:hover{
+background-color: #413e3e;
+border-radius: 5px;
+ } 
+ .main-right
+ {
+    display: flex;
+    flex-direction: column;
+    background-color:#FFFAF0 ;
+    border-left: 1px solid #3D3D42;
+ }
+ .main-header{
+text-align: center;
+    color:#F5F5F5;
+    background-color: #1c1e20
+ }
+ .main-chat-window{
+flex-grow: 1;
+margin: 10px;
+color: black;
+font-size: larger;
+overflow-y: scroll;
+margin-top: 12px;
+ }
+
+ .main-chat-window .messages{
+margin-bottom: 10px;
+padding:1px;
+border-radius: 15px;
+margin-bottom: 15px;
+height:fit-content;
+width: 330px;
+overflow-wrap: break-word;
+background-color: darkgrey;
+ }
+
+ .main-chat-window .messages .name-chat{
+     font-size: 18px;
+     font-style: bold;
+     color:blue;
+     margin-bottom: 3px;
+     margin-left: 5px;
+
+ }
+
+ .main-chat-window .messages .text{
+color:black; 
+flex-wrap:wrap;
+margin-left: 40px;
+ }
+
+ .main-chat-window .messages .name-chat span{
+         
+    color: white;
+    font-style:bold;
+    margin-left: 120px;
+ }
+
+
+ .main-message-container{
+ padding: 20px 10px;
+ display: flex;
+ margin-bottom: 12x;
+ 
+
+ }
+ .main-message-container input{
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    color: black;
+    padding: 10px;
+outline: none;
+    
+ }
+
+
+ 
+ .unmute{
+    color:red
+ }
+ .unvideo{
+    color: red;
+ }
+
+
+
+
+
+
+
+

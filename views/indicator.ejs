@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/styles/roomindicator.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="container">
+    <h1 id="h3"> please enter Room id</h1> 
+     <div class="form">
+        <input type="text" id="roomid" placeholder="enter your roomid">
+               <button id="button1" onclick="gettext()">join chat</button>
+    
+                        
+     </div>
+</div>
+<script>
+
+document
+function gettext(){
+let name=document.getElementById('roomid').value;
+    console.log(name);
+    window.location.href= `/protected/${name}`
+}
+</script>
+</body>
+</html>

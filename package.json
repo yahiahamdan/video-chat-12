@@ -1,0 +1,33 @@
+{
+  "name": "login",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "devStart": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "config": "3.3.1",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "express-session": "^1.17.2",
+    "install": "^0.13.0",
+    "mongoose": "^6.3.2",
+    "passport": "^0.5.2",
+    "passport-google-auth": "^1.0.2",
+    "passport-google-oauth2": "^0.2.0",
+    "peer": "^0.6.1",
+    "peerjs": "^1.3.2",
+    "socket.io": "^4.5.0",
+    "sweetalert2": "^11.4.16",
+    "uuid": "^8.3.2"
+  }
+}
