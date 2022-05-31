@@ -9,11 +9,20 @@ const {ExpressPeerServer}=require('peer');
 const peerServer=ExpressPeerServer(server,{debug:true});
 app.set('view engine','ejs')
 
-
 //middleware function for authenctication check
 function islogged(req,res,next){req.user ? next():res.redirect('/')}
+//middleware for uplading ejs , css pictures when uplading 
 app.use(express.static(__dirname + '/public'))
+
+/*PeerServer is a peer-to-peer client server using WebRTC,
+ where your browser acts as a server for other browsers across
+  WebRTC peer-to-peer data channels  
+  
+  Note that no peer-to-peer data goes through the server;
+   The server acts only as a connection broker.
+  */
 app.use('/peerjs',peerServer);
+
 
 app.use(session({secret :"ay 7aga"}));
 app.use(passport.initialize());
@@ -61,12 +70,10 @@ socket.on('join-room',(roomid,userid,name)=>{
         socket.on('message',(message,name)=>{
             io.to(roomid).emit('createMessage',message,name)
         })   
-        // socket.on('video-connect',(newvideo)=>{
-        //   io.to(roomid).emit('videoconnect1',newvideo)
-        // })
+       
 })
 })
-server.listen(3000,()=>{
+server.listen(process.env.port||3000,()=>{
 console.log("port is listing on 3000")
 })
 
