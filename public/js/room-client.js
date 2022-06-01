@@ -14,7 +14,7 @@
                communication between peers */
              peer.on('open',(myid)=>{
             console.log( ` my id is ${myid}`)
-            socket.emit('join-room',roomid,myid,name);
+            socket.emit('join-room',roomid,myid);
               })
                        //getting the document to make scroll
               const chatMessages=document.getElementsByClassName('main-chat-window')
@@ -30,21 +30,19 @@ const messages_chat=document.getElementsByClassName('messages')
 myvideo.muted=true;
 
 /*lisiting for events from the server as giving the generated id for communication */
-socket.on('userconnected',(userid,names)=>{
+socket.on('userconnected',(userid)=>{
                 callpeer(userid);         
                    console.log(`${names} connected with ${userid}`)
                        //custom alertt when user connects
                    Swal.fire({
-                    title: `${names} joined the room`,
+                    title: `user joined the room`,
                     showClass: {
                       popup: 'animate__animated animate__fadeInDown'
                     },
                     hideClass: {
                       popup: 'animate__animated animate__fadeOutUp'
                     }
-                  }) 
-
-                    
+                  })     
          })
 
 let myvideostream;
@@ -215,20 +213,20 @@ let Timeego=toaday.getHours()+" :"+toaday.getMinutes();
     return ts;
   };             
   /* create message passing the name and message as paramter to the message */
-socket.on('createMessage',(message,name)=>{
-            outputmessage(message,name); 
- chatMessages.scrollTop=chatMessages.scrollHeight;
-})
-/* dom function for creating the message to be viewd in the screen */
-function outputmessage(message,name){
-const div=document.createElement('div')
-div.classList.add('messages');
-div.innerHTML=`<p class="name-chat"> ${name}<span>${tConvert(Timeego)}</span></p>
-         <p class="text-chat">
-          ${message}
-         </p>`;
-document.querySelector('.main-chat-window').appendChild(div);
-}
+// socket.on('createMessage',(message,name)=>{
+//             outputmessage(message); 
+//  chatMessages.scrollTop=chatMessages.scrollHeight;
+// })
+// /* dom function for creating the message to be viewd in the screen */
+// function outputmessage(message,name){
+// const div=document.createElement('div')
+// div.classList.add('messages');
+// div.innerHTML=`<p class="name-chat"> ${name}<span>${tConvert(Timeego)}</span></p>
+//          <p class="text-chat">
+//           ${message}
+//          </p>`;
+// document.querySelector('.main-chat-window').appendChild(div);
+// }
 
 
 

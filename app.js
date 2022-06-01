@@ -64,11 +64,11 @@ res.render('index')
 io.on('connection',socket=>{
 socket.on('join-room',(roomid,userid)=>{
     socket.join(roomid)
-   socket.broadcast.to(roomid).emit('userconnected',userid,name)
+   socket.broadcast.to(roomid).emit('userconnected',userid)
     //messages
-        socket.on('message',(message,name)=>{
-            io.to(roomid).emit('createMessage',message,name)
-        })   
+        // socket.on('message',(message,name)=>{
+        //     io.to(roomid).emit('createMessage',message,name)
+        // })   
        
 })
 })
