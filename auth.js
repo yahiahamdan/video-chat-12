@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 var googleAuthURL=`http://localhost:${PORT}/google/callback`;
 if (process.env.NODE_ENV === "production") {
-  googleAuthURL = `https://video-group-chat-12.herokuapp:${PORT}/google/callback`
+  googleAuthURL = `https://video-group-chat-12.herokuapp/google/callback`
 }
 
 
