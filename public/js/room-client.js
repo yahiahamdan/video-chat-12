@@ -2,7 +2,7 @@
          //peer js implementation  
          // every peer create dynaimic ids when it join the peer-server 
          var peer = new Peer(undefined,{
-                   secure:true,
+                    secure:true,
                  path :'/peerjs',
                  host :'/'||'video-group-chat-12.herokuapp.com',
                  //wheither it is herouko or localaddress

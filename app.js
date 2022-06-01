@@ -21,7 +21,9 @@ app.use(express.static(__dirname + '/public'))
   Note that no peer-to-peer data goes through the server;
    The server acts only as a connection broker.
   */
-app.use('/peerjs',peerServer);
+
+  let port=process.env.PORT
+app.use(`localhost:${port}/peerjs`,peerServer);
 
 
 app.use(session({secret :"ay 7aga"}));
