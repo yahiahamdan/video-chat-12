@@ -6,7 +6,7 @@
                  path :'/peerjs',
                  host :'/'||'video-group-chat-12.herokuapp.com',
                  //wheither it is herouko or localaddress
-                 port :'3000'||'S443'
+                 port :'3000'||'443'
              });          
 
            let peerlist=[];
