@@ -45,7 +45,7 @@ app.get('/protected',(req,res)=>{
          res.status(404).render('you must write roomid', {title: "Sorry, page not found"});
         });
 app.get('/indicator',(req,res)=>{
-    let name=req.user.displayName
+    //let name=req.user.displayName
     res.render('indicator')
          //res.send(` hello ${req.user.displayName} by ${req.user.email}`);
 
@@ -54,7 +54,6 @@ app.get('/indicator',(req,res)=>{
 app.get('/protected/:roomID',islogged,(req,res)=>{
    let data={
     roomid:req.params.roomID,
-    name:req.user.displayName
    }
 res.render('rooms',data);
 })

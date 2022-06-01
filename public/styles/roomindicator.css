@@ -3,6 +3,13 @@ margin: 0;
 padding: 0;
 background-color:rgb(6, 6, 34);
 }
+.form{
+
+display: flex;
+flex-direction: column;
+margin-bottom: 20px;
+
+}
 input,#button1{
 
 position: relative;
@@ -16,6 +23,7 @@ transition: .5s;
     opacity: 0.5;
 }
 #button1{
+    margin-left: 80px;
     width:170px;
     height: 50px;
     border-radius: 0 25px 25px 0;
@@ -32,6 +40,7 @@ transition: 0.5s;
 }
 #roomid{
     width:340px;
+    margin-bottom: 30px;
     height: 50px;
     border: none;
     padding: 0 25px;
