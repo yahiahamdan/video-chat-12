@@ -4,10 +4,9 @@
          var peer = new Peer(undefined,{
            secure:true,
                  path :'/peerjs',
-                 host :'video-group-chat-12.herokuapp.com',
-                
+                 host :'/'||'video-group-chat-12.herokuapp.com' ,
                  //wheither it is herouko or localaddress
-                 port : '3000'|| '443'
+                 port : '3000'||'443'
              });          
 
            let peerlist=[];
