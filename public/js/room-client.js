@@ -3,10 +3,10 @@
          // every peer create dynaimic ids when it join the peer-server 
          var peer = new Peer(undefined,{
                    secure:true,
-                 
+                 path :'/peerjs',
                  host :'/'||'video-group-chat-12.herokuapp.com',
                  //wheither it is herouko or localaddress
-                 port :'443'
+                 port :'3000'||'443'
              });          
 
            let peerlist=[];
