@@ -10,7 +10,7 @@ const peerServer=ExpressPeerServer(server,{debug:true});
 app.set('view engine','ejs')
 
 //middleware function for authenctication check
-function islogged(req,res,next){req.user ? next():res.redirect('/')}
+//function islogged(req,res,next){req.user ? next():res.redirect('/')}
 //middleware for uplading ejs , css pictures when uplading 
 app.use(express.static(__dirname + '/public'))
 
@@ -28,18 +28,18 @@ app.use(session({secret :"ay 7aga"}));
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./auth')
+// require('./auth')
 
-app.get('/auth/google',passport.authenticate('google',
-{scope:['email','profile']}))
+// app.get('/auth/google',passport.authenticate('google',
+// {scope:['email','profile']}))
 
-app.get('/google/callback',passport.authenticate('google',{
-successRedirect:'/indicator',
-failureRedirects:'/auth/failure'
-}))
-app.get('/auth/failure',(req,res)=>{
-res.send('something went wrong')
-})
+// app.get('/google/callback',passport.authenticate('google',{
+// successRedirect:'/indicator',
+// failureRedirects:'/auth/failure'
+// }))
+// app.get('/auth/failure',(req,res)=>{
+// res.send('something went wrong')
+// })
 app.get('/protected',(req,res)=>{
          // res.send("7ngeeb name isa")      
          res.status(404).render('you must write roomid', {title: "Sorry, page not found"});
@@ -51,7 +51,7 @@ app.get('/indicator',(req,res)=>{
 
 })
 
-app.get('/protected/:roomID',islogged,(req,res)=>{
+app.get('/protected/:roomID',(req,res)=>{
    let data={
     roomid:req.params.roomID,
    }
