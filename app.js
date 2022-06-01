@@ -22,7 +22,7 @@ app.use(express.static(__dirname + '/public'))
    The server acts only as a connection broker.
   */
 
-app.use(`localhost:${process.env.PORT}/peerjs`,peerServer);
+app.use(`/peerjs`,peerServer);
 
 app.use(session({secret :"ay 7aga"}));
 app.use(passport.initialize());
