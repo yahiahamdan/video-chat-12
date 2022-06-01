@@ -62,7 +62,7 @@ res.render('index')
 })
 //  socket connection for server
 io.on('connection',socket=>{
-socket.on('join-room',(roomid,userid,name)=>{
+socket.on('join-room',(roomid,userid)=>{
     socket.join(roomid)
    socket.broadcast.to(roomid).emit('userconnected',userid,name)
     //messages
