@@ -185,7 +185,7 @@ function pressingEnter(){
 let text=$('input')
 $('html').keydown((e)=>{
 if(e.which==13&&text.val().length!==0){
-    console.log(`${name}  :  ${text.val()}`)
+    console.log(`  :  ${text.val()}`)
     socket.emit('message',text.val(),name);
     text.val('');
 }
