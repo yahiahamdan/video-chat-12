@@ -73,7 +73,7 @@ socket.on('join-room',(roomid,userid,name)=>{
        
 })
 })
-server.listen(process.env.PORT||3000,()=>{
+server.listen(process.env.PORT || 3000,()=>{
 console.log("port is listing on 3000")
 })
 
