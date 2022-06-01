@@ -3,7 +3,7 @@
          // every peer create dynaimic ids when it join the peer-server 
          var peer = new Peer(undefined,{
                  path :'/peerjs',
-                 host :'/',
+                 host :location.hostname,
                  //wheither it is herouko or localaddress
                  port : '3000'||'443'
              });          
