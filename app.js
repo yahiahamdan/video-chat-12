@@ -7,7 +7,9 @@ const session=require('express-session');
 const passport = require('passport');
 const {ExpressPeerServer}=require('peer');
 let path = require( 'path' );
-const peerServer=ExpressPeerServer(server,{debug:true});
+const peerServer=ExpressPeerServer(server,{
+    debug:true,
+        path:'/peerjs'});
 app.set('view engine','ejs')
 
 //middleware function for authenctication check
@@ -22,7 +24,7 @@ app.use(express.static(__dirname + '/public'))
    The server acts only as a connection broker.
   */
 
-app.use('/peerjs',peerServer);
+app.use('/',peerServer);
 
 app.use(session({secret :"ay 7aga"}));
 app.use(passport.initialize());

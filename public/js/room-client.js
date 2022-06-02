@@ -1,11 +1,11 @@
  const socket=io();           
-
+  
          var peer = new Peer(undefined,{
                     secure:true,
-                 path :'/peerjs',
-                 host :'/',
+                 path :'peerjs',
+                 host :location.hostname,
                  //wheither it is herouko or localaddress
-                 port :'9000',
+                 port :location.port
              });          
 
            let peerlist=[];
