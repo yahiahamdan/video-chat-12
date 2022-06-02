@@ -1,12 +1,11 @@
  const socket=io();           
-         //peer js implementation  
-         // every peer create dynaimic ids when it join the peer-server 
+
          var peer = new Peer(undefined,{
-                    
+                    secure:true,
                  path :'/peerjs',
-                 host :'/'||'video-group-chat-12.herokuapp.com',
+                 host :'/',
                  //wheither it is herouko or localaddress
-                 port :'3000'||'9000',
+                 port :'9000',
              });          
 
            let peerlist=[];
