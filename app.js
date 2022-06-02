@@ -6,6 +6,7 @@ const io=require('socket.io')(server)
 const session=require('express-session');
 const passport = require('passport');
 const {ExpressPeerServer}=require('peer');
+let path = require( 'path' );
 const peerServer=ExpressPeerServer(server,{debug:true});
 app.set('view engine','ejs')
 
@@ -13,7 +14,6 @@ app.set('view engine','ejs')
 //function islogged(req,res,next){req.user ? next():res.redirect('/')}
 //middleware for uplading ejs , css pictures when uplading 
 app.use(express.static(__dirname + '/public'))
-
 /*PeerServer is a peer-to-peer client server using WebRTC,
  where your browser acts as a server for other browsers across
   WebRTC peer-to-peer data channels  

@@ -2,11 +2,11 @@
          //peer js implementation  
          // every peer create dynaimic ids when it join the peer-server 
          var peer = new Peer(undefined,{
-                    secure:true,
+                    
                  path :'/peerjs',
                  host :'/'||'video-group-chat-12.herokuapp.com',
                  //wheither it is herouko or localaddress
-                 port :'3000'||'443'
+                 port :'3000'||'9000',
              });          
 
            let peerlist=[];
@@ -27,8 +27,6 @@ const myvideo=document.createElement('video')
 const messageelement=document.createElement('div')
 
 const messages_chat=document.getElementsByClassName('messages')
-
-myvideo.muted=true;
 
 /*lisiting for events from the server as giving the generated id for communication */
 socket.on('userconnected',(userid)=>{
@@ -69,7 +67,7 @@ call.on('stream',function(remotestream){
 userVideoStream(remotestream)
  peerlist.push(call.peer)
     }
-
+   
 })
 }).catch((err)=>{console.log(err+"unable to get media")})
 })
