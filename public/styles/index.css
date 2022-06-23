@@ -51,13 +51,13 @@ margin: 5px;
 
 .button1{
 background-color: red;
-color:black;
+color:white;
 cursor: pointer;
 width: 160px;
 display: flex;
 align-items: center;
 justify-content: space-between;
- width: 170px;
+ width: 110px;
    font-size: 20px;
    padding: 3px;
 border-radius: 20px;
@@ -87,7 +87,7 @@ align-items: center;
 justify-content: space-between;
 color: red;
 transition: 0.2s;
-border: none;
+border: 1px;
 outline: none;
 height: 30px;;
 }
