@@ -7,7 +7,7 @@
                  path :'peerjs',
                  host :location.hostname,
                  //wheither it is herouko or localaddress
-                 port :location.port||3000
+                 port :location.port
              });          
 
            let peerlist=[];
