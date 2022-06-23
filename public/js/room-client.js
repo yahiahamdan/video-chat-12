@@ -3,7 +3,7 @@
  const socket=io();           
   
          var peer = new Peer(undefined,{
-                   // secure:true,
+                    secure:true,
                  path :'peerjs',
                  host :location.hostname,
                  //wheither it is herouko or localaddress
