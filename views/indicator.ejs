@@ -10,21 +10,27 @@
 
 <div class="container">
     <h1 id="h3"> please enter Room id</h1> 
-     <div class="form">
-        <input type="text" id="name" class="name" placeholder="enter your name">
+    <div class="form-container">
         <input type="text" id="roomid" class="roomid" placeholder="enter your roomid">
-               <button id="button1" onclick="gettext()">join chat</button>
-    
-                        
+         <button id="button1" onclick="gettext()">join chat</button>               
      </div>
+    </div>
 </div>
 <script>
+
+
+
+    //ana 3ayz input id roomid ab3to lel server el awl 
 function gettext(){
 let roomid=document.getElementById('roomid').value;
-
+let name=document.getElementById('name').value;
     console.log(roomid);
+    console.log(name);
+
     window.location.href= `/protected/${roomid}`
 }
+
+
 </script>
 </body>
 </html>

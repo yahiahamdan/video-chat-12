@@ -1,7 +1,9 @@
+
+
  const socket=io();           
   
          var peer = new Peer(undefined,{
-                    secure:true,
+                   // secure:true,
                  path :'peerjs',
                  host :location.hostname,
                  //wheither it is herouko or localaddress
@@ -28,20 +30,46 @@ const messageelement=document.createElement('div')
 const messages_chat=document.getElementsByClassName('messages')
 
 /*lisiting for events from the server as giving the generated id for communication */
+
+
+
 socket.on('userconnected',(userid)=>{
                 callpeer(userid);         
-                   console.log(`${names} connected with ${userid}`)
+                   console.log(` connected with ${userid}`)
                        //custom alertt when user connects
                    Swal.fire({
-                    title: `user joined the room`,
+                    title: `friend joined the room`,
                     showClass: {
                       popup: 'animate__animated animate__fadeInDown'
                     },
                     hideClass: {
                       popup: 'animate__animated animate__fadeOutUp'
                     }
-                  })     
+                  })
+                  
+                 
          })
+
+
+
+       
+        
+          async function getUserName(){
+          const {value: text} = await Swal.fire({
+            title: 'please your enter Name',
+            input: 'text',
+            inputLabel: 'welcome to this chat',
+            showCancelButton: false
+          })
+              if (!text) {
+                return 'You need to write something!'
+              }else{
+            
+           pressingEnter(text);
+        
+          }
+            }
+          getUserName();
 
 let myvideostream;
 /*videostream is to make user to stop or continue the video */
@@ -179,17 +207,19 @@ const setmuteButton=()=>{
 jquery method for pressing enter instead of button
 then passing the text written to  server side to display it in chat-messages div 
 */
-function pressingEnter(){
+function pressingEnter(name){
 let text=$('input')
 $('html').keydown((e)=>{
 if(e.which==13&&text.val().length!==0){
-    console.log(`  :  ${text.val()}`)
-    socket.emit('message',text.val(),name);
+    console.log(`${text.val()} we dh name  ${name}`)
+   
+    socket.emit('messages',text.val(),name);
     text.val('');
 }
 });      
 }
-pressingEnter();
+let user="user"
+
 
 ////////////////////////////////////////////////////////////////////////////////////
              
@@ -211,20 +241,25 @@ let Timeego=toaday.getHours()+" :"+toaday.getMinutes();
     return ts;
   };             
   /* create message passing the name and message as paramter to the message */
-// socket.on('createMessage',(message,name)=>{
-//             outputmessage(message); 
-//  chatMessages.scrollTop=chatMessages.scrollHeight;
-// })
-// /* dom function for creating the message to be viewd in the screen */
-// function outputmessage(message,name){
-// const div=document.createElement('div')
-// div.classList.add('messages');
-// div.innerHTML=`<p class="name-chat"> ${name}<span>${tConvert(Timeego)}</span></p>
-//          <p class="text-chat">
-//           ${message}
-//          </p>`;
-// document.querySelector('.main-chat-window').appendChild(div);
-// }
+  socket.on('createMessage',(message,name)=>{
+  
+    outputmessage(message,name); 
+chatMessages.scrollTop=chatMessages.scrollHeight;
+})
+/* dom function for creating the message to be viewd in the screen */
+function outputmessage(message,name){
+const div=document.createElement('div');
+div.classList.add('messages');
+div.innerHTML=`<p class="name-chat"> ${name}<span>${tConvert(Timeego)}</span></p>
+         <p class="text-chat">
+          ${message}
+         </p>`;
+document.querySelector('.main-chat-window').appendChild(div);
+}
+
+outputmessage("welcome to chat pro","chat-pot");
+
+
 
 
 

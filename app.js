@@ -42,8 +42,7 @@ app.use(passport.session());
 // app.get('/auth/failure',(req,res)=>{
 // res.send('something went wrong')
 // })
-app.get('/protected',(req,res)=>{
-         // res.send("7ngeeb name isa")      
+app.get('/protected',(req,res)=>{      
          res.status(404).render('you must write roomid', {title: "Sorry, page not found"});
         });
 app.get('/indicator',(req,res)=>{
@@ -55,6 +54,7 @@ app.get('/indicator',(req,res)=>{
 
 app.get('/protected/:roomID',(req,res)=>{
    let data={
+   
     roomid:req.params.roomID,
    }
 res.render('rooms',data);
@@ -65,13 +65,12 @@ res.render('index')
 //  socket connection for server
 io.on('connection',socket=>{
 socket.on('join-room',(roomid,userid)=>{
-    socket.join(roomid)
-   socket.broadcast.to(roomid).emit('userconnected',userid)
+    socket.join(roomid);
+   socket.broadcast.to(roomid).emit('userconnected',userid);
     //messages
-        // socket.on('message',(message,name)=>{
-        //     io.to(roomid).emit('createMessage',message,name)
-        // })   
-       
+         socket.on('messages',(message,name)=>{
+             io.to(roomid).emit('createMessage',message,name);
+         })   
 })
 })
 server.listen(process.env.PORT || 3000,()=>{
